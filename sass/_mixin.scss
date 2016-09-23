@@ -1,0 +1,72 @@
+@mixin col($item,$length){
+	@if $item=="0" {
+		@for $index from 1 through $length
+		{
+			.row .col-#{$index}
+			{
+				width:percentage($index/$length);
+			}
+			.row .offset-#{$index}
+			{
+				margin-left:percentage($index/$length);
+			}
+		}
+	}@else {
+		@for $index from 1 through $length
+		{
+			.row .col-#{$item}-#{$index}
+			{
+				width:percentage($index/$length);
+			}
+			.row .offset-#{$item}-#{$index}
+			{
+				margin-left:percentage($index/$length);
+			}
+		}
+	}
+}
+
+@mixin responsive-init($all){
+	$item:'';
+	@each $index in $all{
+		$item:$item+'.visible-'+$index+",";
+	}
+	#{$item}{
+		display: none !important;
+	}
+}
+
+
+@mixin toggle($toggle,$item,$item_1){
+	@if index($media,$item)==0 {
+		@media (max-width:#{$item_1}){
+			@include toggleDisplay($toggle,$item);
+		}	
+	}
+	@else if index($media,$item)==length($media){
+		@media (min-width:#{$item}){
+			@include toggleDisplay($toggle,$item);
+		}
+	}
+	@else {
+		@media (min-width:#{$item+1}) and (max-width:#{$item_1}){
+			@include toggleDisplay($toggle,$item);
+		}
+	}
+}
+
+
+@mixin toggleDisplay($toggle,$item){
+	@if $toggle=="visible"{
+		.#{$toggle}-#{$item}{
+			display:block!important;
+		}
+		.#{$toggle}-#{$item}-inline{
+		display:inline-block!important;
+		}
+	}@else if $toggle=="hidden"{
+		.#{$toggle}-#{$item}{
+			display:none!important;
+		}
+	}
+}

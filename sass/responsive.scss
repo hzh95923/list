@@ -1,6 +1,6 @@
+@import '_mixin';
 $col_num:12;
-$col_width:8.33%;
-$media:(0,320,480,640,768,1025,1366);
+$media:(0,320,480,640,768,1024,1366);
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
 body{margin:0;}
 ul,ol{
@@ -14,7 +14,6 @@ ul,ol{
 		clear:both;
 	}
 }
-.text-hide{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
 .center-block{display:block;margin-left:auto;margin-right:auto;}
 .text-center{text-align:center;}
 .pull-right{float:right!important;}
@@ -30,33 +29,6 @@ ul,ol{
 	min-height:1px;
 	width:100%;
 }
-@mixin col($media,$length){
-	@if $media=="0" {
-		@for $index from 1 through $length
-		{
-			.row .col-#{$index}
-			{
-				width:$index*$col_width;
-			}
-			.row .offset-#{$index}
-			{
-				margin-left:$index*$col_width;
-			}
-		}
-	}@else {
-		@for $index from 1 through $length
-		{
-			.row .col-#{$media}-#{$index}
-			{
-				width:$index*$col_width;
-			}
-			.row .offset-#{$media}-#{$index}
-			{
-				margin-left:$index*$col_width;
-			}
-		}
-	}
-}
 @each $index in $media{
 	@if $index==0 {
 		@include col(#{$index},$col_num);
@@ -65,5 +37,16 @@ ul,ol{
 			@include col(#{$index},$col_num);
 		}
 	}
-	
+}
+
+@include responsive-init($media);
+
+@each $index in $media{
+	@if index($media,$index)==length($media){
+		@include toggle(visible,$index,null);
+		@include toggle(hidden,$index,null);
+	}@else{
+		@include toggle(visible,$index,nth($media,index($media,$index)+1));
+		@include toggle(hidden,$index,nth($media,index($media,$index)+1));
+	}
 }
