@@ -36,7 +36,6 @@
 	}
 }
 
-
 @mixin toggle($toggle,$item,$item_1){
 	@if index($media,$item)==0 {
 		@media (max-width:#{$item_1}){
@@ -54,7 +53,6 @@
 		}
 	}
 }
-
 
 @mixin toggleDisplay($toggle,$item){
 	@if $toggle=="visible"{

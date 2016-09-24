@@ -1,8 +1,9 @@
 @import '_mixin';
 $col_num:12;
 $media:(0,320,480,640,768,1024,1366);
-html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
-body{margin:0;}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:625%;}
+body{margin:0;font-size:0.12rem;}
+img{border:0rem;}
 ul,ol{
 	margin-top:0;margin-bottom:0px;
 	li{list-style:none;}
@@ -14,10 +15,27 @@ ul,ol{
 		clear:both;
 	}
 }
+.flex{
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+	height:100%;
+	margin:0 auto;
+	vertical-align: middle;
+	font-size:0;
+}
+.center-v{
+	display:flex;
+	@extend .flex;	
+}
+.center-v-inline{
+	display:inline-flex;
+	@extend .flex;	
+}
 .center-block{display:block;margin-left:auto;margin-right:auto;}
 .text-center{text-align:center;}
-.pull-right{float:right!important;}
-.pull-left{float:left!important;}
+.fr{float:right!important;}
+.fl{float:left!important;}
 .hide{display:none!important;}
 .show{display:block!important;}
 .img-responsive{display:block;max-width:100%;height:auto;}
@@ -38,7 +56,6 @@ ul,ol{
 		}
 	}
 }
-
 @include responsive-init($media);
 
 @each $index in $media{

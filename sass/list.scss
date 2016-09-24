@@ -1,0 +1,10 @@
+.height{}
+.logobox{
+	height: 0.5rem;
+	font-size:0;
+	.menu{width:20vw;}
+	.logo{width: 60vw;}
+}
+@media (min-width:321px) and (max-width:640px){
+	height: 0.7rem;
+}

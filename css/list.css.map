@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,QAAQ,GACP,MAAM,EAAE,MAAM,EACd,SAAS,EAAC,CAAC;AACX,cAAK,GAAC,KAAK,EAAC,IAAI;AAChB,cAAK,GAAC,KAAK,EAAE,IAAI;;AAElB,gDAA8C,GAC7C,MAAM,EAAE,MAAM",
+"sources": ["../sass/list.scss"],
+"names": [],
+"file": "list.css"
+}
