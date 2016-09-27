@@ -1,0 +1,30 @@
+.height{}
+.logobox{
+	height: 0.6rem;
+	font-size:0;
+	.menu,{width: 13.44%;}
+	.logo{width: 69.06%;}
+	.shopcar{
+		width:17.5%;
+		position:relative;
+		.car{position:relative;}
+		.cart-qty{
+			position:absolute;
+			right: -0.10rem;
+			top:-0.10rem;
+		    width: 0.15rem;
+		    height: 0.15rem;
+		    line-height: 0.15rem;
+		    font-size: 0.12rem;
+		    color: #ffffff;
+		    background: #f9978c;
+		    border-radius: 50%;
+		    text-align: center;
+		    vertical-align: middle;
+		}
+	}
+}
+@media (min-width:321px) {
+	.menu,.shopcar{width:80vw;}
+	.logobox{height: 0.7rem;}
+}

@@ -3,13 +3,55 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie10" />
 	<title>list</title>
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
-</head>
+	<link rel="stylesheet" type="text/css" href="css/list.css"></head>
 <body>
-	<div class="row">
-		<div class="col-1366-1">col</div>
-		<div class="offset-1366-1 col-1366-3">fadf</div>
+	<header>
+		<div class="logobox">
+			<div class="menu center-v-inline">
+				<a href="#">
+					<img class="img-responsive" src="images/menu.png"></a>
+			</div>
+			<div class="logo center-v-inline">
+				<picture>
+					<source srcset="images/logo.jpg" media="(min-width:641px)">
+					<source srcset="images/logo-480-640.jpg" media="(min-width:321px) and (max-width: 640px)">
+					<img class="img-responsive" src="images/logo-320.jpg">
+				</picture>
+			</div>
+			<div class="shopcar center-v-inline">
+				<a href="#" class="car">
+					<span class="cart-qty">2</span>
+					<img class="img-responsive" src="images/icon-cart.png"></a>
+			</div>
+		</div>
+	</header>
+	<div class="content">
+		<div class="banner">
+			<picture>
+				<source srcset="images/banner-320.jpg" media="(max-width: 320px)">
+				<source srcset="images/banner-480.jpg" media="(max-width: 480px)">
+				<source srcset="images/banner-640.jpg" media="(max-width: 640px)">
+				<source srcset="images/banner-768.jpg" media="(max-width: 768px)">
+				<source srcset="images/banner-1024.jpg" media="(max-width: 1024px)">
+				<img class="img-responsive" src="images/banner.jpg">
+			</picture>
+		</div>
+		<div class="title-area clearfloat row">
+			<div class="refine col-6 col-768-4">
+				<h3>REFINE</h3></div>
+			<div class="title-area-mid col-12 col-768-4 pull-left">
+				<p class="bread">Home > Wedding Apparel ></p>
+				<h2>Wedding Dresses <i class="highlight">( 623 )</i class="highlight"></h2>
+
+			</div>
+
+			<div class="recommended col-6 col-768-4">
+				<p>Recommended</p>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
